@@ -27,7 +27,10 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('Ошибка сервера. Попробуйте позже.');
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || data.detail || 'Ошибка сервера. Попробуйте позже.');
+      }
       setSent(true);
     } catch (err) {
       setError(err.message);

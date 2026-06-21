@@ -2,11 +2,13 @@ import pg from 'pg';
 
 const { Pool } = pg;
 
-// Reuse pool across warm invocations
 let pool;
 function getPool() {
   if (!pool) {
-    pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    });
   }
   return pool;
 }
@@ -33,7 +35,17 @@ export default async function handler(req, res) {
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
-  const client = await getPool().connect();
+  if (!process.env.DATABASE_URL) {
+    return res.status(500).json({ error: 'DATABASE_URL is not set' });
+  }
+
+  let client;
+  try {
+    client = await getPool().connect();
+  } catch (err) {
+    return res.status(500).json({ error: 'DB connection failed', detail: err.message });
+  }
+
   try {
     await ensureTable(client);
 
@@ -61,6 +73,8 @@ export default async function handler(req, res) {
     }
 
     res.status(405).json({ error: 'Method not allowed' });
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
   } finally {
     client.release();
   }
