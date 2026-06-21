@@ -1,18 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Leaf } from 'lucide-react';
 import { company } from '../data/content';
+import { useLang } from '../context/LanguageContext';
+import { t } from '../data/translations';
 
-const navLinks = [
-  { href: '#home', label: 'Главная' },
-  { href: '#about', label: 'О компании' },
-  { href: '#services', label: 'Услуги' },
-  { href: '#projects', label: 'Проекты' },
-  { href: '#publications', label: 'Публикации' },
-  { href: '#training', label: 'Обучение' },
-  { href: '#contact', label: 'Контакты' },
-];
+const langs = ['ru', 'kz', 'en'];
 
 export default function Navbar() {
+  const { lang, setLang } = useLang();
+  const tr = t[lang].nav;
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -21,6 +17,34 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const navLinks = [
+    { href: '#home',         label: tr.home },
+    { href: '#about',        label: tr.about },
+    { href: '#services',     label: tr.services },
+    { href: '#projects',     label: tr.projects },
+    { href: '#publications', label: tr.publications },
+    { href: '#training',     label: tr.training },
+    { href: '#contact',      label: tr.contact },
+  ];
+
+  const LangButtons = ({ mobile }) => (
+    <div className={`flex gap-1 ${mobile ? 'mt-3 pt-3 border-t border-gray-100' : ''}`}>
+      {langs.map((l) => (
+        <button
+          key={l}
+          onClick={() => setLang(l)}
+          className={`px-${mobile ? 3 : 2} py-1 rounded font-medium text-${mobile ? 'sm' : 'xs'} transition-colors ${
+            lang === l
+              ? 'bg-green-700 text-white'
+              : 'text-gray-500 hover:text-green-700'
+          }`}
+        >
+          {l.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
 
   return (
     <header
@@ -58,16 +82,12 @@ export default function Navbar() {
 
           {/* Language toggle + CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <div className="flex gap-1 text-xs">
-              <button className="px-2 py-1 bg-green-700 text-white rounded font-medium">RU</button>
-              <button className="px-2 py-1 text-gray-500 hover:text-green-700 rounded transition-colors">KZ</button>
-              <button className="px-2 py-1 text-gray-500 hover:text-green-700 rounded transition-colors">EN</button>
-            </div>
+            <LangButtons />
             <a
               href="#contact"
               className="px-4 py-2 bg-green-700 text-white text-sm font-medium rounded-lg hover:bg-green-600 transition-colors"
             >
-              Связаться
+              {tr.connect}
             </a>
           </div>
 
@@ -96,11 +116,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <div className="flex gap-2 mt-3 pt-3 border-t border-gray-100">
-              <button className="px-3 py-1 bg-green-700 text-white text-sm rounded font-medium">RU</button>
-              <button className="px-3 py-1 text-gray-500 text-sm hover:text-green-700 rounded">KZ</button>
-              <button className="px-3 py-1 text-gray-500 text-sm hover:text-green-700 rounded">EN</button>
-            </div>
+            <LangButtons mobile />
           </nav>
         </div>
       )}
