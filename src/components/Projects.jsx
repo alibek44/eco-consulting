@@ -29,6 +29,9 @@ export default function Projects() {
           {projects.map((proj) => (
             <article key={proj.id} className="bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all overflow-hidden group">
               <div className="aspect-video bg-gradient-to-br from-green-800 to-teal-600 relative overflow-hidden">
+                {proj.image && (
+                  <img src={proj.image} alt={proj.title} className="absolute inset-0 w-full h-full object-cover" />
+                )}
 
                 <div className="absolute top-3 right-3">
                   <span className={`text-xs font-medium px-2 py-1 rounded-full ${categoryColors[proj.category] || 'bg-gray-100 text-gray-600'}`}>

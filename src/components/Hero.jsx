@@ -17,6 +17,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-800 to-teal-700" />
+      <img src="/images/hero.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay" />
       <div
         className="absolute inset-0 opacity-20"
         style={{
