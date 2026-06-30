@@ -69,13 +69,17 @@ export default function Contact() {
               </div>
             ))}
 
-            <div className="bg-gradient-to-br from-green-800 to-teal-700 rounded-xl aspect-[4/3] flex items-center justify-center relative overflow-hidden">
-              <div className="text-center text-white/60 p-6">
-                <MapPin className="w-12 h-12 mx-auto mb-3 text-white/40" />
-                <p className="text-sm font-medium text-white/70">{tr.mapLabel}</p>
-                <p className="text-xs mt-1 italic">{tr.mapSub}</p>
-                <p className="text-xs mt-3 text-white/50">{company.address}</p>
-              </div>
+            <div className="rounded-xl aspect-[4/3] overflow-hidden border border-gray-100">
+              <iframe
+                title="Терра-Природа на карте"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.7!2d76.9285!3d43.2220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f2b2b2b2b2b%3A0x0!2z0LzQutGALiDQodCw0LzQsNC7LTEsINC0LiAxLCDQkNC70LzQsNGC0YssINCa0LDQt9Cw0YXRgdGC0LDQvQ!5e0!3m2!1sru!2skz!4v1!5m2!1sru!2skz&q=мкр+Самал-1,+Алматы,+Казахстан"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
 
             <div className="bg-white rounded-xl p-5 border border-gray-100">

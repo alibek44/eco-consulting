@@ -28,10 +28,14 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((proj) => (
             <article key={proj.id} className="bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all overflow-hidden group">
-              <div className="aspect-video bg-gradient-to-br from-green-800 to-teal-600 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-end p-3">
-                  <p className="text-white/50 text-xs italic leading-tight">[{proj.imagePlaceholder}]</p>
-                </div>
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-green-800 to-teal-600">
+                {proj.image && (
+                  <img
+                    src={proj.image}
+                    alt={proj.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                )}
                 <div className="absolute top-3 right-3">
                   <span className={`text-xs font-medium px-2 py-1 rounded-full ${categoryColors[proj.category] || 'bg-gray-100 text-gray-600'}`}>
                     {proj.category}

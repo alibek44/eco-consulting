@@ -49,13 +49,8 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           {/* Left: image placeholder */}
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-green-800 to-teal-600 flex items-end justify-center p-4">
-              <div className="text-center">
-                <div className="text-6xl mb-3">🌿</div>
-                <p className="text-white/70 text-sm italic">
-                  [Фото: экспедиция в заповедник «Аксу-Жабаглы», Южный Казахстан]
-                </p>
-              </div>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <img src="/images/team.jpg" alt="Команда Терра-Природа" className="w-full h-full object-cover" />
             </div>
             {/* Accent card */}
             <div className="absolute -bottom-6 -right-6 bg-green-700 text-white rounded-xl p-5 shadow-xl">
