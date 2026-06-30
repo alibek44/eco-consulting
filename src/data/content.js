@@ -8,8 +8,8 @@ export const company = {
   email: 'aiko.85@mail.ru',
   address: '050051, ГОРОД АЛМАТЫ, МЕДЕУСКИЙ РАЙОН, МКР. САМАЛ-1, Д. 1, КВ. 16',
   founded: '2018',
-  employees: '80+',
-  projects: '350+',
+  employees: '15+',
+  projects: '100+',
   regions: '14',
 };
 

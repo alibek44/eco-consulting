@@ -10,7 +10,7 @@ export const t = {
       cta1: 'Наши услуги', cta2: 'Связаться с нами',
       stat1: 'Год основания', stat2: 'Специалистов',
       stat3: 'Завершённых проектов', stat4: 'Регионов Казахстана',
-      photoCaption: '[Фото: горные леса Заилийского Алатау, Алматинская область, Казахстан]',
+      photoCaption: '',
     },
     about: {
       badge: 'О компании', title: 'Миссия и ценности',
@@ -82,7 +82,7 @@ export const t = {
       cta1: 'Біздің қызметтер', cta2: 'Бізбен байланысу',
       stat1: 'Құрылған жылы', stat2: 'Маман',
       stat3: 'Аяқталған жоба', stat4: 'Қазақстан өңірлері',
-      photoCaption: '[Фото: Іле Алатауының таулы ормандары, Алматы облысы, Қазақстан]',
+      photoCaption: '',
     },
     about: {
       badge: 'Компания туралы', title: 'Миссия және құндылықтар',
@@ -154,7 +154,7 @@ export const t = {
       cta1: 'Our Services', cta2: 'Get in Touch',
       stat1: 'Founded', stat2: 'Specialists',
       stat3: 'Completed Projects', stat4: 'Regions of Kazakhstan',
-      photoCaption: '[Photo: Mountain forests of Zailiysky Alatau, Almaty Region, Kazakhstan]',
+      photoCaption: '',
     },
     about: {
       badge: 'About Us', title: 'Mission & Values',
