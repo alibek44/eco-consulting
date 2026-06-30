@@ -19,7 +19,7 @@ const highlights = [
   {
     icon: Users,
     title: 'Мультидисциплинарная команда',
-    text: 'Более 80 специалистов: экологи, лесоустроители, ГИС-специалисты, ботаники, зоологи',
+    text: 'Около 15 специалистов: экологи, лесоустроители, ГИС-специалисты, ботаники, зоологи',
   },
   {
     icon: BookOpen,
@@ -56,7 +56,7 @@ export default function About() {
             </div>
             {/* Accent card */}
             <div className="absolute -bottom-6 -right-6 bg-green-700 text-white rounded-xl p-5 shadow-xl">
-              <div className="text-3xl font-bold">350+</div>
+              <div className="text-3xl font-bold">100+</div>
               <div className="text-sm text-green-200">реализованных проектов</div>
             </div>
           </div>
