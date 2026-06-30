@@ -83,7 +83,6 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    image: '/images/projects/project1.jpg',
     title: 'Разработка плана управления государственным природным резерватом «Семей Орманы»',
     category: 'ООПТ',
     year: '2023',
@@ -95,7 +94,6 @@ export const projects = [
   },
   {
     id: 2,
-    image: '/images/projects/project2.jpg',
     title: 'ОВОС для транспортного коридора «Западная Европа — Западный Китай»',
     category: 'Экспертиза',
     year: '2022',
@@ -107,7 +105,6 @@ export const projects = [
   },
   {
     id: 3,
-    image: '/images/projects/project3.jpg',
     title: 'Программа восстановления саксаульных лесов Приаралья',
     category: 'Лесовосстановление',
     year: '2022–2024',
@@ -119,7 +116,6 @@ export const projects = [
   },
   {
     id: 4,
-    image: '/images/projects/project4.jpg',
     title: 'Атлас особо охраняемых природных территорий Казахстана',
     category: 'Картография',
     year: '2021',
@@ -131,7 +127,6 @@ export const projects = [
   },
   {
     id: 5,
-    image: '/images/projects/project5.jpg',
     title: 'Озеленение и ландшафтное планирование «Нового Алматы»',
     category: 'Дендрология',
     year: '2023',
@@ -143,7 +138,6 @@ export const projects = [
   },
   {
     id: 6,
-    image: '/images/projects/project6.jpg',
     title: 'Рекультивация нефтезагрязнённых земель Мангистауской области',
     category: 'Рекультивация',
     year: '2021–2023',

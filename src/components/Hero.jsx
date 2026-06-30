@@ -16,10 +16,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src="/images/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-green-950/70" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-800 to-teal-700" />
       <div
         className="absolute inset-0 opacity-20"
         style={{
